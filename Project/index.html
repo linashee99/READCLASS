@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> READ CLASS - App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="welcome-screen" class="iphone-screen-white blue-bg">
+        <h1 class="logo-text-blue">READ CLASS</h1>
+        <div class="button-container">
+            <button onclick="showSection('register-screen')" class="btn register-btn">Create Account</button>
+            <button onclick="showSection('login-screen')" class="btn login-btn">Log In</button>
+        </div>
+    </div>
+
+    <div id="login-screen" class="iphone-screen blue-bg" style="display: none;">
+        <a href="#" onclick="showSection('welcome-screen')" class="back-link">← Back</a>
+        <div class="form-container">
+            <h2 style="color: white; text-align: center;">Welcome Back to READ CLASS</h2>
+            <input type="email" id="userEmail" placeholder="Email address">
+            <input type="password" id="userPassword" placeholder="Password">
+            <p id="login-error" class="error-text"></p>
+            <button onclick="checkLogin()" class="continue-btn">Log In</button>
+        </div>
+    </div>
+
+    <div id="register-screen" class="iphone-screen blue-bg" style="display: none;">
+        <div class="top-nav">
+            <a href="#" onclick="showSection('welcome-screen')" class="back-link">← Back</a>
+        </div>
+        <div class="form-container">
+            <h2 style="color: aliceblue; text-align: center;">Welcome to READ CLASS</h2>
+            <input type="text" id="regName" placeholder="Full Name">
+            <input type="email" id="regEmail" placeholder="Email address">
+            <input type="password" id="regPassword" placeholder="Password">
+            <p id="reg-error" class="error-text"></p>
+            <button onclick="handleRegister()" class="continue-btn">Create Account</button>
+        </div>
+    </div>
+
+<div id="home-screen" class="iphone-screen blue-bg" style="display: none;">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-link " onclick="showSection('home-screen')">Story</a>
+            <a href="#" class="nav-link" onclick="showSection('home-screen')">Popular Story</a>
+            <a href="#" class="nav-link" >Account</a>
+            <a href="#" class="nav-link " onclick="logout()">Log Out</a>
+        </div>
+    </nav>
+        <div class="content">
+    <h1 style="color: white; text-align: center; margin: 20px 0;">Featured Stories</h1>
+    <div class="story-grid">
+
+
+
+
+        <div class="story-card" onclick="openStory('The Daughter of The Flower Queen')">
+            <div class="image-container">
+                <img src="../Project/she/Flower-Princess-surrounded-by-gaurds-1.jpg.webp" alt="Flower Queen" class="story-img">
+            </div>
+            <div class="story-info">
+                <h3>The Daughter of The Flower Queen</h3>
+                <p>A brave prince frees the Flower Queen's daughter from dangerous dragons.</p>
+            </div>
+        </div>
+        
+        <div class="story-card" onclick="openStory('flower-queen')">
+            <div class="image-container">
+                <img src="../project/she/05_Lute-Player.jpg.webp" alt="Flower Queen" class="story-img">
+            </div>
+            <!-- <a href="#" onclick="showSection('home-screen')" class="back-link">← Back</a> -->
+            <div class="story-info">
+                <h3>The Lute Player</h3>
+                <p>Only a queen’s courage, and a secret disguise, can free her captured king.</p>
+            </div>
+
+        </div>
+
+        <div class="story-card" onclick="openStory('flower-queen')">
+            <div class="image-container">
+                <img src="../project/she/With-Green-shirt-and-only-one-ant-1.jpg.webp" alt="Flower Queen" class="story-img">
+            </div>
+            <!-- <a href="#" onclick="showSection('home-screen')" class="back-link">← Back</a> -->
+            <div class="story-info">
+                <h3>The Shoemaker Gnome</h3>
+                <p>A young gnome learns that doing the right thing matters more than earning rewards.</p>
+            </div>
+
+        </div>
+
+        <div class="story-card" onclick="openStory('flower-queen')">
+            <div class="image-container">
+                <img src="../project/she/shepardess-scene-1-updated-1.jpg.webp" alt="Flower Queen" class="story-img">
+            </div>
+            <!-- <a href="#" onclick="showSection('home-screen')" class="back-link">← Back</a> -->
+            <div class="story-info">
+                <h3>Sofia the Shepherdess </h3>
+                <p>When the sheep go missing, Sofia sets out to find them – and must rescue them from a trap.</p>
+            </div>
+
+        </div>
+
+                <div class="story-card" onclick="openStory('flower-queen')">
+            <div class="image-container">
+                <img src="../project/she/cover-11.png.webp" alt="Flower Queen" class="story-img">
+            </div>
+            <!-- <a href="#" onclick="showSection('home-screen')" class="back-link">← Back</a> -->
+            <div class="story-info">
+                <h3> Beauty and the Beast </h3>
+                <p> A young woman trapped in a castle learns a beast is more than what he first appears. </p>
+            </div>
+
+        </div>
+
+                <div class="story-card" onclick="openStory('flower-queen')">
+            <div class="image-container">
+                <img src="../project/she/AliMerchant_Final_1.jpg.webp" alt="Flower Queen" class="story-img">
+            </div>
+            <!-- <a href="#" onclick="showSection('home-screen')" class="back-link">← Back</a> -->
+            <div class="story-info">
+                <h3>Ali and the Merchant of Baghdads </h3>
+                <p>After entrusting a merchant with his gold, Ali returns years later to discover it has vanished.</p>
+            </div>
+
+        </div>
+
+                <div class="story-card" onclick="openStory('flower-queen')">
+            <div class="image-container">
+                <img src="../project/she/05-300x300.jpg.webp" alt="Flower Queen" class="story-img">
+            </div>
+            <!-- <a href="#" onclick="showSection('home-screen')" class="back-link">← Back</a> -->
+            <div class="story-info">
+                <h3> Cinderella (Classic) </h3>
+                <p>Mistreated by her stepmother and two stepsisters, Cinderella yearns to be free and go to the royal ball.</p>
+            </div>
+
+        </div>
+
+        <div class="story-card" onclick="openStory('flower-queen')">
+            <div class="image-container">
+                <img src="../project/she/6.jpg.webp" alt="Flower Queen" class="story-img">
+            </div>
+            <!-- <a href="#" onclick="showSection('home-screen')" class="back-link">← Back</a> -->
+            <div class="story-info">
+                <h3>The Ant and The Dove </h3>
+                <p>Two unlikely friends learn to count on each other.</p>
+            </div>
+
+        </div>
+
+                <div class="story-card" onclick="openStory('flower-queen')">
+            <div class="image-container">
+                <img src="../project/she/Emperor-Akbar-and-the-Half-Reward-Cover.jpg.webp" alt="Flower Queen" class="story-img">
+            </div>
+            <!-- <a href="#" onclick="showSection('home-screen')" class="back-link">← Back</a> -->
+            <div class="story-info">
+                <h3> Akbar and the Half-Reward </h3>
+                <p> Emperor Akbar seeks to reward a young man who saved his life, but one guard stands in the way. </p>
+            </div>
+
+        </div>
+
+                <div class="story-card" onclick="openStory('flower-queen')">
+            <div class="image-container">
+                <img src="../project/she/Cover-Image.png.webp" alt="Flower Queen" class="story-img">
+            </div>
+            <!-- <a href="#" onclick="showSection('home-screen')" class="back-link">← Back</a> -->
+            <div class="story-info">
+                <h3> Androcles and the Lion </h3>
+                <p> Despite his very sensible fear, Androcles pulls a thorn from a lion’s paw. </p>
+            </div>
+
+        </div>
+
+                <div class="story-card" onclick="openStory('flower-queen')">
+            <div class="image-container">
+                <img src="../project/she/Aladdin-Bedtime-Story-Cover.png" alt="Flower Queen" class="story-img">
+            </div>
+            <!-- <a href="#" onclick="showSection('home-screen')" class="back-link">← Back</a> -->
+            <div class="story-info">
+                <h3> Aladdin and the Magic Lamp </h3>
+                <p> Aladdin stumbles upon a magical lamp that releases a powerful genie capable of granting wishes. </p>
+            </div>
+
+        </div>
+
+                <div class="story-card" onclick="openStory('flower-queen')">
+            <div class="image-container">
+                <img src="../project/she/The-Girl-Fish-Cover.png" alt="Flower Queen" class="story-img">
+            </div>
+            <!-- <a href="#" onclick="showSection('home-screen')" class="back-link">← Back</a> -->
+            <div class="story-info">
+                <h3> The Girl-Fish </h3>
+                <p>A girl who is turned into a fish is thrown into an undersea adventure.</p>
+            </div>
+
+        </div>
+
+        
+
+    </div>
+</div>
+
+
+
+
+
+<!-- 
+======================================account screnn================================================ -->
+
+<div id="account-screen" class="iphone-screen blue-bg" style="display: none;">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-link" onclick="showSection('home-screen')">Story</a>
+            <a href="#" class="nav-link" onclick="showSection('home-screen')">Popular Story</a>
+            <a href="#" class="nav-link active" >Account</a>
+            <a href="#" class="nav-link" onclick="logout()">Log Out</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="profile-card" style="align-content: center;">
+                <div class="account-page">
+        <header class="page-header">
+            <h1 style="color: white;">My Account</h1>
+            <p style="color: azure;">Manage your Reader profile</p>
+        </header>
+
+        <main class="settings-container">
+            <section class="card profile-card">
+                <div class="profile-img">
+                <img src="/img/she/lina.png" alt="User" class="profile-avatar">
+                </div>
+                <div class="profile-info">
+                    <label>Name</label>
+                    <div class="editable">
+                        <span id="user-name">LINA SHEE</span>
+    
+                    </div>
+                    <label>Email</label>
+                    <p>linashee29@email.com</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h3><i class="fas fa-user-circle"></i> Story</h3>
+                <div class="input-group">
+                    <label>Story Type</label>
+                    <select id="skin-type">
+                        <option value="combination">Combination</option>
+                        <option value="oily">Romance</option>
+                        <option value="dry">Action</option>
+                        <option value="sensitive">Fantasy</option>
+                    </select>
+                    <p class="hint">Your story type helps us provide personalized recommendations</p>
+                </div>
+            </section>
+
+<section class="card">
+    <h3><i class="fas fa-lock"></i> Account Settings</h3>
+
+    <div class="setting-item">
+        <div class="item-icon"><i class="fas fa-envelope"></i></div>
+        <div class="item-text">
+            <strong>Change Email</strong>
+            <span>linashee29@email.com</span>
+        </div>
+        <i class="fas fa-chevron-right"></i>
+    </div>
+
+    <div class="setting-item">
+        <div class="item-icon"><i class="fas fa-key"></i></div>
+        <div class="item-text">
+            <strong>Change Password</strong>
+            <span>Last changed 3 months ago</span>
+        </div>
+        <i class="fas fa-chevron-right"></i>
+    </div>
+</section>
+
+            <button class="logout-btn">
+                <a href="#" onclick="logout()" class="fas fa-sign-out-alt" style="color: #94afff;">Log Out</a>
+            </button>
+
+            
+        </main>
+    </div>
+        </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- ======================================account screnn================================================  -->
+
+
+
+<div id="products-screen" class="iphone-screen blue-bg" style="display: none;">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-link" onclick="showSection('home-screen')">Home</a>
+            <a href="#" class="nav-link active" onclick="showSection('home-screen')">Products</a>
+            <a href="#" class="nav-link" >Account</a>
+            <a href="#" class="nav-link" onclick="logout()">Log Out</a>
+        </div>
+    </nav>
+    <div class="content">
+        <h1 style="color: white; margin-top: 50px;">Our Products</h1>
+        <p style="color: white;">បញ្ជីទំនិញរបស់អ្នកនៅទីនេះ</p>
+    </div>
+</div>
+
+<div id="account-screen" class="iphone-screen blue-bg" style="display: none;">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-link" onclick="showSection('home-screen')">Story</a>
+            <a href="#" class="nav-link" onclick="showSection('home-screen')">Popular Story</a>
+            <a href="#" class="nav-link active">Account</a>
+            <a href="#" class="nav-link" onclick="logout()">Log Out</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="profile-card" style="align-content: center;">
+                <div class="account-page">
+        <header class="page-header">
+            <h1 style="color: white;">My Account</h1>
+            <p style="color: azure;">Manage your Reader profile</p>
+        </header>
+
+        <main class="settings-container">
+            <section class="card profile-card">
+                <div class="profile-img">
+                <img src="/img/she/lina.png" alt="User" class="profile-avatar">
+                </div>
+                <div class="profile-info">
+                    <label>Name</label>
+                    <div class="editable">
+                        <span id="user-name">LINA SHEE</span>
+    
+                    </div>
+                    <label>Email</label>
+                    <p>linashee29@email.com</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h3><i class="fas fa-user-circle"></i> Story</h3>
+                <div class="input-group">
+                    <label>Story Type</label>
+                    <select id="skin-type">
+                        <option value="combination">Combination</option>
+                        <option value="oily">Romance</option>
+                        <option value="dry">Action</option>
+                        <option value="sensitive">Fantasy</option>
+                    </select>
+                    <p class="hint">Your story type helps us provide personalized recommendations</p>
+                </div>
+            </section>
+
+<section class="card">
+    <h3><i class="fas fa-lock"></i> Account Settings</h3>
+
+    <div class="setting-item">
+        <div class="item-icon"><i class="fas fa-envelope"></i></div>
+        <div class="item-text">
+            <strong>Change Email</strong>
+            <span>linashee29@email.com</span>
+        </div>
+        <i class="fas fa-chevron-right"></i>
+    </div>
+
+    <div class="setting-item">
+        <div class="item-icon"><i class="fas fa-key"></i></div>
+        <div class="item-text">
+            <strong>Change Password</strong>
+            <span>Last changed 3 months ago</span>
+        </div>
+        <i class="fas fa-chevron-right"></i>
+    </div>
+</section>
+
+            <button class="logout-btn">
+                <a href="#" onclick="logout()" class="fas fa-sign-out-alt" style="color: #94afff;">Log Out</a>
+            </button>
+
+            
+        </main>
+    </div>
+        </div>
+
+
+        </div>
+
+
+
+
+
+</div>
+
+    <script src="script.js"></script>
+
+
+
+        <div id="story-detail-screen" class="iphone-screen blue-bg" style="display: none;">
+            <a href="#" class="back-link" onclick="showSection('home-screen')" style="color: white; text-decoration: none;">← Back</a>
+
+            <div class="content" style="padding: 20px; color: white; width: 100%; ;">
+                <h2 id="story-title-display"style="display: none;">Story Title</h2>
+                
+                <div class="writing-container" style="margin-top: 20px;">
+                    <img src="../project/img/she/Flower-Princess-surrounded-by-gaurds-1.jpg.webp" alt="header" class="header">
+                    
+                    <div class="story-header-content">
+                        <br>
+                        <h1>The Daughter of The Flower Queen</h1>
+                        <h2>Written by: World Stories Bank</h2>
+                        <h2>Illustrated by: World Stories Bank</h2>
+                        <p>A brave prince frees the Flower Queen’s daughter from dangerous dragons.</p>
+                    </div>
+
+                <div class="story-container">
+                    
+
+                    <div class="read">
+                        <br><br><br>
+                    <p>One day a young prince was riding across a meadow that stretched on for miles.  A ditch appeared in front of him, so he tugged the reins to steer away.  Then heard a faint voice calling out from the darkness below. </p> 
+                    
+                    <img src="../project/she/Flower-Scene-1-1.jpg.webp"  class="story-image">
+                    
+                    <p> Stopping his horse and looking down into the ditch, he saw an old woman trapped at the bottom. </p>
+                    <img src="../project/she/Flower-Scene-2-1.jpg.webp"  class="story-image">
+                    
+                    <p>He tied a rope around a stump, carefully lowered himself down, lifted her onto his shoulders and climbed back up.</p>
+                    <p>“How did this happen to you?” he asked once they stood on solid ground.</p>
+                    <br>
+                    
+                    <h2>“How did this happen to you?”</h2>
+                    
+                    <br>
+                    <p>“My son,” said the old woman, brushing dirt from her shawl, “I left before dawn to sell my eggs in town.  In the dark, I stumbled into that ditch. I might have stayed there forever, if not for you.”</p>
+                    <br>
+                    <p>The prince noticed she was trembling and unsteady.  “Let me take you home,” he said gently. “Where do you live?”</p>
+                    <br>
+                    <p>“Just there,” said the old woman, pointing to the chimney of a small hut at the edge of the forest.</p>
+                    <br>
+                    <p>The prince lifted her onto his horse and led the horse to her cottage. As she climbed down, she said, “Wait a moment, good sir. I have something for you.”</p>
+                    <br>
+                    <p>She disappeared inside and returned with something glinting in her palm. </p>
+                    <br>
+                    <p>“You have a kind heart,” she said. “Tell me, what do you desire most, above all else?”</p>
+                    <br>
+                    
+                    <h2>“Tell me, what do you desire most, above all else?”</h2>
+                    
+                    <br>
+                    <p>The prince thought for a moment, then said, “I wish to prove myself worthy – and to win the love of an extraordinary woman.”</p>
+                    <br>
+                    <p>The old woman nodded.  “I know of such a person – the daughter of the Flower Queen.  But she is a prisoner in the land of the dragons.”</p>
+                    <br>
+                    <p>“Imprisoned?  But why?” </p>
+                    <br>
+                    <p>“Dragons have no art,” said the old woman. “The Queen of the Dragons commands her to weave living blossoms each night to decorate her ballroom.  Her captive does this but feels no joy because she is not free.”</p>
+                    <br>
+                    <p>“I will free her!” declared the prince.  </p>
+                    <br>
+                    
+                    <h2>“I will free her!” declared the prince. </h2>
+                    
+                    <br>
+                    <p>
+                        Opening her wrinkled palm, the old woman said, “Take this silver bell. If you ring it once, the King of the Eagles will come to your aid. Twice, and the King of the Foxes will appear. Ring it three times, and the King of the Fishes will help you.  But use this bell wisely – each king may be called upon only once.” 
+                    </p>
+                    <br>
+                    <img src="../project/she/Flower-Scene-3-1-1024x683.jpg.webp"  class="story-image">
+                    <br>
+                    <p>The prince started to ask where to find the dragons’ land but before he could speak, the old woman and the hut vanished in an instant, like mist.</p>
+                    <br>
+                    <p>Then the Prince realized he must have been speaking to a good fairy.  </p>
+                    <br>
+                    <p>He tucked the bell deep into his pocket, rode home to bid farewell to his parents, and began his journey.</p>
+                    <br>
+                    <p>For a year he traveled, helping those in need along the way and always asking if anyone knew the whereabouts of the land of the dragons. But no one could say.  </p>
+                    <br>
+                    <p>One day, he reached a small hut where an old man sat by the door, his white beard so long that it pooled on the ground.</p>
+                    <br>
+                    <p>“Good day, grandfather,” said the prince. “Do you happen to know where the dragons live?”</p>
+                    <br>
+                    <p>The old man lifted one gnarled finger and pointed to a mountain peak behind him.  He wheezed, “The dragons live on that mountain.”  </p>
+                    <br>
+                    <h2>“The dragons live on that mountain.” </h2>
+                    <br>
+                    <p>“And if you’re seeking the Flower Queen’s daughter”—the prince’s eyes widened in surprise—”you’ll find her at the Dragon Queen’s nightly ball, where she must decorate the halls. But beware! You cannot enter without an invitation from the Dragon Queen herself.”</p>
+                    <br>
+                    <p>The prince thanked him and headed to the mountain.  The slope was far too steep and dangerous for his horse to climb.  Since he didn’t know how long he would be, with a sad goodbye he set his horse free.</p>
+                    <br>
+                    <img src="../project/she/Flower-Scene-4-1-1024x683.jpg.webp"  class="story-image">
+                    <br>
+                    <p>Up and up he climbed the mountain until at last he reached a magnificent castle, made entirely of gold and jewels.  Tall iron gates surrounded it on all sides. He’d barely touched the front gate when seven dragons swooped down with a thunder of wings.</p>
+                    <br>
+                    <p>“Who dares to approach the kingdom of the dragons?” they roared, flames flickering between their teeth.</p>
+                    <br>
+                    <p>The prince bowed low.  “Great dragons,” said he.  “I have heard wonders of the Dragon Queen’s balls – and wish to serve in her court.”</p>
+                    <br>
+                    <h2>“I have heard wonders of the Dragon Queen’s balls – and wish to serve in her court.”</h2>
+                    <br>
+                    <p>This flattering speech pleased them.  The largest dragon, who seemed to be the leader, led him through twelve dazzling halls, made entirely of gold and jewels. In the twelfth room they found the Dragon Queen seated on a diamond-encrusted throne. </p>
+                    <br>
+                    <img src="../project/she/Flower-Scene-5-1-1024x683.jpg.webp" class="story-image">
+                    <br>
+                    <p>She was a terrible-looking beast, her horned head hissing and snorting fire, her tongue darting in and out. The Dragon Queen glared down at the prince with eyes that glowed like coals.</p>
+                    <br>
+                    <h2>The Dragon Queen glared down at the prince with eyes that glowed like coals.</h2>
+                    <br>
+                    <p>“You wish to serve me?” she hissed.  “Prove yourself. My favorite female horse, a mare, feeds in the meadow each day.  You must take my mare to pasture for three days and return her safely each evening.  Do this, and you will earn a reward.  But if you fail, I will eat you.”</p>
+                    <br>
+                    <img src="../project/she/Flower-Scene-6-1-1024x683.jpg.webp" class="story-image">
+                    <br>
+                    <p>The prince breathed deeply and accepted.  </p>
+                    <br>
+                    <p>The next morning, the prince led the Dragon Queen’s mare to pasture. But no sooner had they reached the grass than she vanished! The prince searched everywhere, but the mare was gone.  </p>
+                    <br>
+                    <p>In despair, he sat on a large rock and contemplated his sad fate. He stared up at the sky and noticed a large bird flying overhead.  Then he remembered the little bell. </p>
+                    <br>
+                    <h2>Then he remembered the little bell. </h2>
+                    <br>
+                    <p>He took it from his pocket and rang it once. </p>
+                    <br>
+                    <p>In a moment he heard a great rustling sound in the air.  The King of the Eagles swooped down and landed before him, taller than he.</p>
+                    <br>
+                    <p>“I know what you need,” said the mighty bird. “The mare gallops among the clouds. I will summon all the eagles of the air to catch her and bring her to you.”</p>
+                    <img src="../project/she/Flower-Scene-7-1.jpg" class="story-image">
+                    <br>
+                    <p>With a powerful beat of his wings, the King of the Eagles soared away. </p>
+                    <br>
+                    <p>By evening, the prince heard a mighty rushing sound in the air.  Flying toward the ground, thousands of eagles were driving the mare toward him. </p>
+                    <br>
+                    <img src="../project/she/Flower-Scene-8-1.jpg" class="story-image">
+                    <br>
+                    <p>When the Prince returned, riding on the Dragon’s Queen’s mare, she was furious. </p>
+                    <br>
+                    <p>“Tomorrow if you fail,” she hissed, her eyes blazing in fury, “I will eat you for dinner!”</p>
+                    <br>
+                    <p>The prince said nothing, and simply bowed.</p>
+                    <br>
+                    <p>“Till morning, I need to keep you close by my side,” said the Dragon Queen. “Tonight, you will come with me to my ball.”</p>
+                    <br>
+                    <h2>“Tonight, you will come with me to my ball.”</h2>
+                    <br>
+                    <p>“Yes, Your Majesty,” said the prince with a bow, his heart leaping.</p>
+                    <br>
+                    <p>That night, the Dragon Queen took the prince to a grand building decorated outside and inside with flowers, though many of the petals drooped and the blooms looked faded.  </p>
+                    <br>
+                    <p>At the ball, young dragons danced together.  The Flower Queen’s daughter was the only other person there, and she wore a dress woven entirely of living blossoms.  Yet for all that, she was not easy to find as she was surrounded by dragons who guarded her fiercely.</p>
+                    <br>
+                    <img src="../project/she/Flower-Princess-surrounded-by-gaurds-1.jpg.webp" class="story-image">
+                    <br><p>How could he possibly speak to her?</p>
+                    <br><p>Digging his hands in his pockets, he felt his canvas bag of sugar cubes he kept handy for his horse.  </p>
+                    <br><p>Dragons, it so happens, love sugar more than anything.</p>
+                    <br><h2>Dragons, it so happens, love sugar more than anything.</h2>
+                    <br><p>Seeing the Dragon Queen was distracted, he walked over to a windowsill, caught the attention of the dragon guards and held up the open bag, giving it a little shake.  Their nostrils flared. Their eyes grew wide. They bounded over, sniffing eagerly.</p>
+                    <br><p>Quick as lightning, the prince slipped past them to the Flower Queen’s daughter.</p>
+                    <br>
+                    <img src="../project/she/Flower-Scene-9-1.jpg" class="story-image">
+                    <br><p>“My lady,” he whispered urgently, “I have come to free you!”</p>
+                    <br><p>The young woman stared at him.  Could it really be true?  She had dreamed of this moment for so long! But what if this stranger was actually a dragon in disguise, using magic to trick her?</p>
+                    <br><p>Then she remembered the gossip she’d heard that evening – how amazed the dragons were that a stranger had returned the Dragon Queen’s mare.  </p>
+                    <br><p>She knew that such a feat could only be accomplished with magic from a good fairy, and that good fairies don’t give away their magic unless it’s to someone who has performed a kindness. </p>
+                    <br><p>She glanced at the Dragon Queen, who was still turned away.  She had to act fast! </p>
+                    <br><h2>She had to act fast! </h2>
+                    <br><p>“Listen!” she whispered.  “If you can bring back the mare for two more days, the Dragon Queen will offer you a reward.  When she does, ask for one of the mare’s foals – one of her young horses.”</p>
+                    <br><p>At midnight, the ball ended.  </p>
+                    <br><p>Early the next morning, the prince again led the Dragon Queen’s mare out into the meadow. And again, the mare vanished before his eyes. </p>
+                    <br><p>He took out his little bell and rang it twice.</p>
+                    <br><h2>He took out his little bell and rang it twice.</h2>
+                    <br><p>In a moment, the King of the Foxes stood before him.  Said he, “I know what you want.  I will summon all the foxes of the world together to dig the mare out from the hills where she hides.”</p>
+                    <img src="../project/she/Flower-Scene-11-1-1024x683.jpg.webp" class="story-image">
+                    <br><p>By evening, many thousand foxes brought the mare to the prince. </p>
+                    <br><p>When the Prince rode the mare back to the castle, the Dragon Queen nearly exploded with rage. She hissed and spat flames.</p>
+                    <br> <h2>She hissed and spat flames.</h2>
+                    <br><p>“If you fail tomorrow,” she snarled, “I will crush your bones between my teeth!” </p>
+                    <br><p>That night she told him once again he must come to the ballroom.</p>
+                    <br><p>At the ball, the Flower Queen’s daughter was delighted to see him, safe and sound.  Using her magic, she wove flowers so thickly around the dragons’ eyes that they could not see, and she hurried to talk to the prince. </p>
+                    <br><p>“My magic here is not strong,” she whispered quickly, “and the dragons will shake off the flowers soon. Listen! If you succeed tomorrow—the third day—wait for me in the meadow with the foal. After the ball ends, we will fly away together!”</p>
+                    <img src="../project/she/Flower-Scene-10-1-1024x683.jpg.webp" class="story-image">
+                    <br><p>The next day, the prince led the mare to the meadow again.  But once more she vanished before his eyes. The prince took out his little bell and rang it three times. </p>
+                    <br><h2>The prince took out his little bell and rang it three times. </h2>
+                    <br><p>In a moment the King of the Fishes appeared.  He said, “She hides in the deepest currents.  We will bring her back.”</p>
+                    <br><p>As the sun set, countless fish drove the mare to shore, water streaming from her mane.  </p>
+                    <img src="../project/she/Flower-Scene-12-1-1024x683.jpg.webp" class="story-image">
+                    <br><p>When the prince returned that evening, riding on the Dragon Queen’s mare, she stomped her feet so hard that the entire mountain shook.  Then she fixed her head on him and snarled through her sharp teeth, “‘Very well!  Choose your reward.”</p>
+                    <br><p>“All I could wish for,” said the prince, “is one of your mare’s foals.”</p>
+                    <br> <h2>“All I could wish for,” said the prince, “is one of your mare’s foals.”</h2>
+                    <br><p>The Dragon Queen snorted in glee – he wanted nothing of her gold or jewels!  “Agreed!” she said at once.  She led him to the stables and gave him one of her mare’s foals.</p>
+                    <br><p>That night, while the dragons reveled at the ball, the prince slipped away to the meadow with the foal and waited. </p>
+                    <br><p>Just past midnight, the Flower Queen’s daughter appeared.  Together they climbed onto the foal’s back—and to the prince’s amazement, the magical creature spread wings and soared into the night sky!</p>
+                    <br><p>They flew until at last they reached the palace of her mother, the Flower Queen. </p>
+                    <br> <h2>They flew until at last they reached the palace of her mother, the Flower Queen. </h2>
+                    <br><p>But the dragons soon discovered their escape and alerted the Dragon Queen, who flew into a terrible rage.  She gathered her army to lay siege upon the Flower Queen’s castle.   </p>
+                     <br><p>The Flower Queen, however, was not without her own magic.  She raised a towering wall of blossoms, bright as suns, strong as iron. The dragons breathed their hottest flames, but the flowers did not burn.  They roared threats, but the Flower Queen and her people did not respond. The beasts clawed and bit, but the stems did not break.</p>
+                    <br><img src="../project/she/Flower-Scene-12-and-a-half-1-1024x683.jpg" class="story-image">
+                    <br><p>After seven days, the Dragon Queen’s army withdrew, defeated.</p>
+                    <br><p>By then, the Prince and the Daughter of the Flower Queen realized they had fallen deeply in love.  Soon they were married – and never was there a more magnificent wedding!</p>
+                    <br><p>Mountains of flowers the size of carriages rose above the treetops.  The air was so sweet that birds fell asleep on the wing and floated down to dream among the petals. </p>
+                    <br> <h2>The air was so sweet that birds fell asleep on the wing and floated down to dream among the petals.</h2>
+                    <img src="../project/she/Flower-Scene-14-1-1024x683.jpg.webp" class="story-image">
+                    <br><p>Someone attended the wedding who took special pleasure in the celebration.  Behind the last row sat an old woman with a basket of eggs, smiling, and then poof! She vanished, like mist.</p>
+                    <br><br>
+
+
+                </div>
+                </div>
+
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,577 @@
+    :root {
+        --bg-color: #FFF5F7;
+        --card-bg: #ffffff;
+        --primary-color: #D63384;
+        --text-main: #333;
+        --text-muted: #777;
+        --nav-purple: #0B1931;
+        --nav-berry: #0B1931;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-main);
+    }
+
+    .blue-bg {
+        background-color: #0B1931;
+        height: 100vh;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+     .white-bg {
+        background-color: white;
+        height: 100vh;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Home screen specific: moves nav to top */
+    #home-screen.blue-bg {
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    .logo-text-blue { 
+        color: #ffffff; 
+        font-size: 3rem; 
+        margin-bottom: 30px; 
+    }
+
+    /* Container for Login/Register forms */
+    .button-container, .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 90%;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    /* Universal Button Style */
+    .btn, .continue-btn {
+        padding: 18px;
+        border-radius: 40px;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        font-size: 1.1rem;
+        width: 100%; /* Ensures all buttons are the same width */
+    }
+
+    .register-btn { background-color: white; color: #0B1931; }
+    .login-btn { 
+        background-color: #0B1931; 
+        color: white; 
+        border: 2px solid white; 
+    }
+    .continue-btn { 
+        background-color: #fffdec; 
+        color: #0B1931; 
+        margin-top: 20px; 
+    }
+
+    /* Input Fields */
+    input {
+        padding: 15px;
+        background: transparent;
+        border: 1px solid white;
+        border-radius: 10px;
+        color: white;
+        width: 100%;
+    }
+    input::placeholder { color: rgba(255, 255, 255, 0.8); }
+
+    /* Navigation Bar */
+    .navbar {
+        width: 100%;
+        background-color: #0B1931;
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-container {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-link {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        padding: 10px 15px;
+        border-radius: 25px;
+        transition: 0.3s;
+    }
+
+    /* The Active Background Pill */
+    .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.3) !important;
+        font-weight: 600;
+    }
+
+    .back-link { 
+        color: white; 
+        text-decoration: none; 
+        font-weight: bold; 
+        font-size: 1.2rem; 
+        position: absolute;
+        top: 30px;
+        left: 20px;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-main);
+    }
+
+    /* NAVIGATION FIX */
+    .navbar {
+        width: 100%;
+        background-color: #0B1931;
+        padding: 15px 0;
+        display: flex;
+        justify-content: center; /* This centers the nav-container on the screen */
+    }
+
+    .nav-container {
+        display: flex;
+        gap: 30px; /* Professional spacing between Home, Products, etc. */
+        align-items: center;
+        justify-content: center; /* ADD THIS: This centers the links inside the container */
+        width: 100%; /* Changed to 100% to connect fully to the screen edges */
+        max-width: 1200px;
+    }
+
+    .nav-container a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    /* Use the same Reset here to keep it full-screen */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    .nav-container a.active {
+        font-weight: normal;  
+        font-style: normal;   
+        color: white;         
+    }
+
+    /* Base style for all links */
+    .nav-link {
+        padding: 8px 20px;
+        border-radius: 25px; /* Rounded pill shape */
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    /* The style that appears ONLY when clicked */
+    .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        font-weight: 600;
+    }
+
+    /* Optional: Slight hover effect before clicking */
+    .nav-link:hover:not(.active) {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Center the large profile section */
+    .main-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+    }
+
+
+    /* ACCOUNT PAGE LAYOUT */
+    .account-page {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .page-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .page-header p {
+        color: var(--text-muted);
+    }
+
+    .signin-btn {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 5px 15px;
+        border-radius: 20px;
+    } 
+
+
+
+    /* កំណត់ឱ្យទំព័រនីមួយៗរៀបចំពីលើចុះក្រោម (កុំឱ្យ Navbar នៅកណ្តាល) */
+    #home-screen, #products-screen, #account-screen {
+        height: 100vh;               /* កម្ពស់ពេញអេក្រង់ */
+        display: flex;
+        flex-direction: column;      /* ដាក់ Navbar នៅលើ Content នៅក្រោម */
+        justify-content: flex-start !important;
+        padding: 0;
+    }
+
+
+
+    .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.3) !important;
+        border-radius: 20px;
+    }
+
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+.account-page {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-header p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-info label {
+    font-size: 12px;
+    color: var(--text-muted);
+    display: block;
+}
+
+.editable {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    background: #f9f9f9;
+    margin-top: 10px;
+}
+
+.hint {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 8px;
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.item-icon { margin-right: 15px; color: var(--text-muted); }
+.item-text { flex: 1; }
+.item-text strong { display: block; font-size: 14px; }
+.item-text span { font-size: 12px; color: var(--text-muted); }
+
+.logout-btn {
+    width: 100%;
+    padding: 15px;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-style: normal; 
+    font-size: 60%;
+}
+
+/* Added this to fix your Sign Out link color */
+.logout-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.profile-avatar {
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    object-position: center; 
+    border: 3px solid #eee;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-color: #0B1931; /* Use the exact hex code of your blue */
+}
+
+/* Target the specific IDs used in your JavaScript */
+#login-error, #reg-error {
+    color: #ff0000; /* Pure Red */
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block; /* Ensures it takes its own line */
+}
+
+/* ============ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Story Grid Layout - Updated for Centering */
+.story-grid {
+    display: grid;
+    /* This defines the size of the boxes. Change 350px to your preferred width */
+    grid-template-columns: repeat(auto-fit, 350px); 
+    gap: 30px;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: center; /* This centers the boxes horizontally */
+    margin: 0 auto;         /* Fallback centering */
+}
+
+.story-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Control the height of the card here */
+    height: 400px; 
+    display: flex;
+    flex-direction: column;
+}
+.image-container {
+    overflow: hidden;
+    flex: 1; /* This makes the image area take up available space */
+    min-height: 250px;
+}
+
+/* Line 406 */
+.story-reader {
+    padding: 20px;
+    overflow-y: auto; /* Allows scrolling if the story is long */
+}
+
+.story-text-box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 20px;
+    color: #333;
+    line-height: 1.8;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Back button specific styling */
+#view-story-screen .nav-link {
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+}
+
+.story-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    transform: scale(1.2); /* Initial Zoomed In state */
+}
+
+/* Zoom Out Animation on Click/Hover */
+.story-card:active .story-img, 
+.story-card:hover .story-img {
+    transform: scale(1.0); /* Zooms out to normal size */
+}
+
+.story-info {
+    padding: 15px;
+    color: white;
+}
+
+.story-info h3 { margin-bottom: 8px; font-size: 1.1rem; }
+.story-info p { font-size: 0.9rem; opacity: 0.9; }
+
+/* Story Reader Page Styles */
+.story-text-box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 20px;
+    color: #333;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+/* កំណត់រូបភាពឱ្យនៅខាងឆ្វេង */
+.header {
+    width: 40%; 
+    border-radius: 30px; 
+    float: left; 
+    margin-right: 20px; /* បន្ថែមចន្លោះពីខាងស្តាំរូបភាពទៅអក្សរ */
+    margin-left: 10%;
+}
+
+/* រៀបចំប្រអប់អក្សរឱ្យនៅទន្ទឹមរូបភាព */
+.story-header-content {
+    text-align: left; /* ប្តូរពី center មកឆ្វេងវិញដើម្បីឱ្យស្អាតជាមួយរូបភាព */
+    overflow: hidden; /* ជួយឱ្យអក្សរមិនរត់ទៅក្រោមរូបភាព */
+}
+
+.story-header-content h1 {
+    font-size: 32px;
+    color: white;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.story-header-content h2 {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.story-header-content p {
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+}
+
+.story-container {
+    display: flex;
+    flex-direction: column; /* This stacks items vertically */
+    align-items: center;    /* This centers the image and text */
+    width: 100%;
+}
+
+.story-image {
+    max-width: 100%;        /* Keeps the image from being too big */
+    height: auto;
+}
+
+.read h2 {
+    margin-top: 15px;       /* Adds a little space between the image and text */
+    color: white;           /* Adjust color to match your design */
+    text-align: center;
+}
+
+.read p {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    height: inherit;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+
+.story-image {
+    width: 60%;           /* កំណត់ទទឹង */
+    height: 60%;          /* កំណត់កម្ពស់ (ត្រូវតែស្មើនឹងទទឹងទើបមូលស្អាត) */
+    border-radius: 10px;     /* កូដធ្វើអោយមូល */
+    object-fit: cover;      /* ការពារកុំអោយរូបភាពរមួល */
+    display: block;
+    margin: 20px auto;      /* រុញអោយនៅកណ្តាល និងមានគម្លាតលើក្រោម */
+}
+
+@media (max-width: 400px) {
+    .story-grid {
+        grid-template-columns: 1fr; /* Switch to full width on very small phones */
+        padding: 10px;
+    }
+}
